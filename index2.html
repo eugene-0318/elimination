@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<title>소거록</title>
+<head>
+	<style>
+		@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+	body{background: black; color: white; margin: auto;}
+	section{padding: 50px; margin: auto;}
+	h2{font-size: 20px; font-weight: semibold}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 40px 0px;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px;}
+
+	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; background: black;}
+
+    .running{width: 200px; animation: flash-once 4s infinite;}
+
+    .bg-graphic{background: url(https://i.pinimg.com/originals/5f/30/1d/5f301dccbe9989bdaf1e95364202d910.gif); background-size: cover;}
+
+    .bg-train{background: url(brokentrain.png); background-size: cover; background-attachment: fixed; animation: flash-once 2s infinite; padding: 272px}
+    .bg-forest{background: url(forest.png); background-size: 510px; background-attachment: fixed; padding: 300px;}
+    .injury1{width: 250px; position: absolute; top: 20px; left: 460px;}
+    .injury2{width: 190px; position: absolute; top: 177px; left: 680px}
+
+    @keyframes flash-once {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }}
+
+  .fade-image {
+  opacity: 0;
+  transform: translateY(30px); /* 살짝 아래에서 올라오듯 */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+	.fade-image.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+	.image{margin: auto; text-align: center;}
+
+	.tlqkf{font-weight: 600;
+	  font-size: 55px;
+      color: black;
+      background: white;
+      border: 1px solid black;
+      position: absolute;
+      top: 241px;
+      width: 500px;
+      margin: auto;
+    }
+
+    .bg-text
+    {font-size: 114px;
+   	color: white;
+    opacity: 50%;
+	margin: 0;
+	position: absolute;
+	top: 250px;
+	width: 800px;
+	z-index: 1}
+
+	         ul{
+      list-style-type: none; 
+      margin: auto;
+      marker: none;
+      padding: 50px;
+      font-size: 20px;
+    }
+
+
+    ul li a {
+      text-decoration: none; 
+      font-weight: 600;
+      color: black;
+      background: white;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    ul li a:hover{
+      background: black; 
+      color: white; 
+      transition: all 0.5s}
+
+
+  	.button{
+      gap: 310px;
+      align-items: center;
+      margin: auto;
+  }
+
+	</style>
+</head>
+<body>
+<section class="bg-train">
+</section>
+<section class="bg-graphic">
+	<div class="wrap" style="text-align: right;">
+	<h1>...우리는 무사히 빠져나왔나?</h1>
+	<p>감염자 하나의 탑승으로 바이러스는 기차를 완전히 점령했다.<br>좀비들로 가득찬 기차는 탈선하고 전복될 수밖에 없었다.<br>그 와중에 겨우겨우 기차에서 빠져나온 우리는 무사한가?</p>
+	</div>
+</section>
+<section class="bg-graphic">
+	<div class="wrap" style="text-align: left;">
+	<img src="injury.png" class="injury1">
+	<img src="injury2.png" class="injury2">
+	<p>안타깝게도 ‘무사히’는 아닌 것 같다.<br>빠져나왔을 땐 우리 둘 다 물린 상처 하나씩 갖고 있었고,<br>머지않아 둘 다 좀비가 되어 어기적거릴 예정이다.<br>내 앞의 네가 나보다 좀더 힘들어 보인다.<br> 다리를 물린 사람과 팔을 물린 사람의 차이일까.</p>
+	</div>
+</section>
+<section class="bg-graphic">
+	<div class="wrap">산 사람을 해치기도, 이미 좀비가 된 사람을 마주치기도 싫어 우리는 숲으로, 숲으로 들어갔다.</div>
+</section>
+	<div class="bg-forest"></div>
+</section>
+<section style="padding: 100px; text-align: center; background: url(https://gifdb.com/images/high/black-background-glitch-tuning-p8257c9synzrwsl7.gif); background-size: cover;" >
+	<div class="fade-image wrap" style="background: url(https://gifdb.com/images/high/black-background-glitch-tuning-p8257c9synzrwsl7.gif); background-size: cover;">
+		<img src="beingzombie.png" class="image">
+		<h1 class="bg-text">좀비가 된다는 것</h1>
+		<h2 class="tlqkf">'좀비가 된다는 것'</h2>
+	</div>
+<script>
+  const fadeImg = document.querySelector('.fade-image');
+
+let lastScrollY = window.scrollY;
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const currentScrollY = window.scrollY;
+
+    if (entry.isIntersecting) {
+      // 요소가 보이면 show 클래스 추가 (페이드 인)
+      entry.target.classList.add("show");
+    } else {
+      // 스크롤을 "올렸을 때만" 클래스 제거해서 다시 실행 가능하게 만듦
+      if (currentScrollY < lastScrollY) {
+        entry.target.classList.remove("show");
+      }
+    }
+
+    // 스크롤 위치 업데이트
+    lastScrollY = currentScrollY;
+  });
+}, {
+  threshold: 0.3
+});
+
+// 여러 이미지에 적용 가능
+document.querySelectorAll(".fade-image").forEach(img => {
+  observer.observe(img);
+});
+
+</script>
+</section>
+<section class="wrap">
+		<div style="font-size: 15px;">나에게는 인간에게서 한없이 멀어진다는 것으로 들렸다.</div>
+	<ul class="button">
+	<li><a href="index3.html">내게서 인간으로서의 무언가가 소거되어 간다.</a></li>
+	</ul>
+</section>
+</body>
+</html>
