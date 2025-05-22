@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>소거록</title>
+
+	<style>
+			@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+		.navbar{z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed; }
+		nav img{width: 70px;}
+		body{background: black; color: white; margin: auto;}
+	section{padding: 50px; margin: auto;}
+	div{padding-top: 100px;}
+	h2{font-size: 20px; font-weight: semibold}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px;}
+	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
+	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative;}
+	.big-img{position: absolute; z-index: -1; width: 800px; opacity: 60%; top: 160px; left: 20px;}
+	button{ padding: 10px 100px; color: white; border: none;}
+	button:hover{background: black; transition: all 1s; }
+	.message{width: 430px; position: absolute;}
+
+	.slide-in-image {
+  opacity: 0;
+  transform: translateX(100px); /* 오른쪽에서 시작 */
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+}
+.slide-in-image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; filter: brightness(1); }
+  10%  { opacity: 0.4; filter: brightness(0.5); }
+  20%  { opacity: 0.9; filter: brightness(1.2); }
+  30%  { opacity: 0.3; filter: brightness(0.6); }
+  40%  { opacity: 1; filter: brightness(1); }
+  50%  { opacity: 0.5; filter: brightness(0.8); }
+  60%  { opacity: 1; filter: brightness(1.2); }
+  70%  { opacity: 0.2; filter: brightness(0.4); }
+  80%  { opacity: 0.7; filter: brightness(1); }
+  90%  { opacity: 1; filter: brightness(1); }
+  100% { opacity: 0.9; filter: brightness(1); }
+}
+
+	.city{width: 500px; text-align: center; animation: flicker 1.8s infinite; position: absolute; top: 1080px; left: -280px;}
+	.society{width: 500px; text-align: center; animation: flicker 1.8s infinite; position: absolute; top: 1080px; left: 670px}
+
+	</style>
+</head>
+<body>
+	<nav class="flex" style="box-shadow: 0px 0px 30px black";>
+		<button onclick="location.href='index3.html'" style="background: black;">
+			<img src="phone.png">
+		</button>
+		<button onclick="location.href='index4.html'">
+			<img src="chicken.png">
+		</button>
+		<button onclick="location.href='index5.html'">
+			<img src="brain.png">
+		</button>
+		<button onclick="location.href='index6.html'">
+			<img src="heart.png">
+		</button>
+	</nav>
+	<section class="wrap">
+		<div>
+		<img src="brokenphone.png" class="big-img">
+		<h1>#1</h1>
+		<p>도망 나오는 와중에도 주머니에 휴대폰은 무사히 들어있었다.<br>이런 상황에서도 휴대폰을 챙기는 것, 여유가 생겼을 때 켜보기까지 하는 것은 현대인의 본능일까?</p>
+		<p>.</p>
+		<p>.</p>
+		<p>.</p>
+		<p>애초에 지금 이렇게 된 이상 나를 현대인이라고 할 수 있을까.<br>일단 감염된 이상 머지않아 문명사회 내에서 살아갈 수 없게 될 것이다.</p>
+		</div>
+	</section>
+		<section class="wrap">
+		<div>
+			<img src="Group 4.png" class="message slide-in-image" style="top: 300px; left: 300px; z-index: 1;">
+			<img src="Group 5.png" class="message slide-in-image" style="top: 90px; left: -190px; z-index: 1;">
+			<img src="Group 6.png" class="message slide-in-image" style="top: 130px; left: 460px; z-index: 1;">
+			<img src="Group 7.png" class="message slide-in-image" style="top: 340px; left: -270px; z-index: 1;">
+			<img src="Group 8.png" class="message slide-in-image" style="top: 580px; left: -60px; z-index: 1;">
+			<img src="Group 9.png" class="message slide-in-image" style="top: 170px; left: -130px; z-index: -1;">
+			<img src="Group 10.png" class="message slide-in-image" style="top: 250px; left: 570px; z-index: 0;">
+			<img src="Group 11.png" class="message slide-in-image" style="top: 210px; left: 70px; z-index: 0;">
+			<img src="Group 13.png" class="message slide-in-image" style="top: 360px; left: 530px; z-index: 1;">
+		</div>
+		<script>
+  const images = document.querySelectorAll('.slide-in-image');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // 리셋 원할 경우
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  images.forEach(img => observer.observe(img));
+</script>
+</section>
+<section class="wrap">
+<div style="padding-top: 600px;">
+	<p>휴대폰 화면에 가득 차 있는 것들.</p><p>나로 하여금 머리를 쓰고, 마음을 졸이고, 신경을 쏟게 하던 것들에<br>이제 신경쓸 필요가 없다.</p>
+</div>
+<div>
+	<img src="city.png" class="city">
+	<img src="society.png" class="society">
+	<p style="padding-top: 200px;">나를 문명인으로 살게 하던 것들.<br>사회적 의무. 책임. 알고 지내던 사람들. 소속감. 연대감…</p>
+	<h2 style="padding-top: 200px; padding-bottom: 100px;">이것들은 이제 나와 아무 상관이 없다.</h2>
+</div>
+		</section>
+
+</body>
+</html>
