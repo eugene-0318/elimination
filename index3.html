@@ -17,8 +17,8 @@
 	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
 	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative;}
 	.big-img{position: absolute; z-index: -1; width: 800px; opacity: 60%; top: 160px; left: 20px;}
-	button{ padding: 10px 100px; color: white; border: none;}
-	button:hover{background: black; transition: all 1s; }
+	.button{ padding: 10px 100px; color: white; border: none;}
+	.button:hover{background: black; transition: all 1s; }
 	.message{width: 430px; position: absolute;}
 
 	.slide-in-image {
@@ -49,20 +49,37 @@
 	.city{width: 500px; text-align: center; animation: flicker 1.8s infinite; position: absolute; top: 1080px; left: -280px;}
 	.society{width: 500px; text-align: center; animation: flicker 1.8s infinite; position: absolute; top: 1080px; left: 670px}
 
+  .button-bottom{
+  		display: flex;
+      text-decoration: none; 
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+    .button-bottom img{width: 70px; height: 70px;}
+  .button-bottom:hover{
+  	filter: drop-shadow(0px 0px 10px white);
+  	text-shadow: 0px 0px 10px white;
+  }
+
+  .under-button{display: flex; width: 800px; justify-content: space-between; padding-top: 50px;}
+
 	</style>
 </head>
 <body>
-	<nav class="flex" style="box-shadow: 0px 0px 30px black";>
-		<button onclick="location.href='index3.html'" style="background: black;">
+	<nav class="flex" style="box-shadow: 0px 0px 30px black;">
+		<button class="button" onclick="location.href='index3.html'" style="background: black;">
 			<img src="phone.png">
 		</button>
-		<button onclick="location.href='index4.html'">
+		<button class="button" onclick="location.href='index4.html'">
 			<img src="chicken.png">
 		</button>
-		<button onclick="location.href='index5.html'">
+		<button class="button" onclick="location.href='index5.html'">
 			<img src="brain.png">
 		</button>
-		<button onclick="location.href='index6.html'">
+		<button class="button" onclick="location.href='index6.html'">
 			<img src="heart.png">
 		</button>
 	</nav>
@@ -85,9 +102,9 @@
 			<img src="Group 7.png" class="message slide-in-image" style="top: 340px; left: -270px; z-index: 1;">
 			<img src="Group 8.png" class="message slide-in-image" style="top: 580px; left: -60px; z-index: 1;">
 			<img src="Group 9.png" class="message slide-in-image" style="top: 170px; left: -130px; z-index: -1;">
-			<img src="Group 10.png" class="message slide-in-image" style="top: 250px; left: 570px; z-index: 0;">
+			<img src="Group 10.png" class="message slide-in-image" style="top: 250px; left: 630px; z-index: 0;">
 			<img src="Group 11.png" class="message slide-in-image" style="top: 210px; left: 70px; z-index: 0;">
-			<img src="Group 13.png" class="message slide-in-image" style="top: 360px; left: 530px; z-index: 1;">
+			<img src="Group 13.png" class="message slide-in-image" style="top: 360px; left: 580px; z-index: 1;">
 		</div>
 		<script>
   const images = document.querySelectorAll('.slide-in-image');
@@ -117,6 +134,16 @@
 	<p style="padding-top: 200px;">나를 문명인으로 살게 하던 것들.<br>사회적 의무. 책임. 알고 지내던 사람들. 소속감. 연대감…</p>
 	<h2 style="padding-top: 200px; padding-bottom: 100px;">이것들은 이제 나와 아무 상관이 없다.</h2>
 </div>
+ <div class="under-button">
+ 	<button onclick="location.href='index4.html'" class="button-bottom" style="visibility: hidden;">
+			<img src="chicken.png">
+			<p style="font-weight: bold;">➤</p>
+		</button>
+ 		<button onclick="location.href='index4.html'" class="button-bottom">
+			<img src="chicken.png">
+			<p style="font-weight: bold;">➤</p>
+		</button>
+	</div> 	
 		</section>
 
 </body>
