@@ -10,9 +10,9 @@
 		body{background: black; color: white; margin: auto; overflow-x: hidden;}
 	section{padding: 50px; margin: auto;}
 	div{padding-top: 100px;}
-	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px}
-	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px; z-index: 1000;}
-	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px;}
+	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px; user-select: none;}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px; z-index: 1000; user-select: none;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px; user-select: none;}
 	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
 	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; }
 	.big-img{position: absolute; z-index: -1; width: 390px; opacity: 40%; top: 160px; left: 250px;}
@@ -130,9 +130,12 @@
   });
 </script>
 	</section>
+
 	<section style="background: url(https://64.media.tumblr.com/523a091cf0e6698c088ea1ba6bc0bcbd/tumblr_o97emcDXRl1tfgvxdo1_500.gif);">
-		<div class="wrap" style="background: url(https://i.gifer.com/VIPi.gif); background-size: cover; padding-bottom: 70px;">
-		<img src="myeyes.png" style="text-align: center; margin: auto; position: absolute; left: -170px; top: -510px; width: 1220px;">
+					<img src="myeyes.png" style="text-align: center; margin: auto; position: absolute; left: 140px; top: 1500px; width: 1220px; z-index: 100;">
+		<div class="wrap" style="background: url(https://i.gifer.com/VIPi.gif); background-size: cover; padding-bottom: 70px;   -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);">
+	
 		<p style="font-size: 25px; text-shadow: 0px 0px 10px black;">…아니, 어쩌면 나도 기억하지 못할 뿐 이성을 잃은 적이 있을지도 모른다. </p>
 		<p style="text-shadow: 0px 0px 10px black;">나도 저렇게 이를 보이고, 날뛰고, 산 사람을 찾고, 그걸 기억하지 못하고…</p>
 		<p style="text-shadow: 0px 0px 10px black;">그러다 정신이 돌아오면 이렇게 너를 쳐다보며 아직은 남 일이라는 생각이나 하고.</p>
