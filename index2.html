@@ -8,7 +8,7 @@
 	body{background: black; color: white; margin: auto;}
 	section{padding: 50px; margin: auto;}
 	h2{font-size: 20px; font-weight: semibold}
-	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px;}
+	p{font-size: 15px; line-height: 160%; padding: 20px 0px;}
 	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px;}
 
 	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; background: black;}
@@ -38,17 +38,30 @@
   transform: translateY(0);
 }
 
-	.image{margin: auto; text-align: center;}
+	.image{margin: auto; text-align: center; z-index: 0;}
 
 	.tlqkf{font-weight: 600;
-	  font-size: 55px;
+	  font-size: 19px;
+    line-height: 160%;
+    text-align: left;
       color: black;
       background: white;
       border: 1px solid black;
       position: absolute;
       top: 241px;
-      width: 500px;
+      width: 320px;
       margin: auto;
+      padding: 10px 20px;
+      z-index: 1;
+    }
+
+    .opacity{font-size: 30px;
+      line-height: 160%;
+      position: absolute;
+      top: 0px;
+      opacity: 50%;
+      z-index: -1;
+      word-break: keep-all;
     }
 
     .bg-text
@@ -129,7 +142,8 @@
 <section style="padding: 100px; text-align: center; background: url(https://gifdb.com/images/high/black-background-glitch-tuning-p8257c9synzrwsl7.gif); background-size: cover;" >
 	<div class="fade-image wrap" style="background: url(https://gifdb.com/images/high/black-background-glitch-tuning-p8257c9synzrwsl7.gif); background-size: cover;">
 		<img src="beingzombie.png" class="image">
-		<h2 class="tlqkf">'좀비가 된다는 것'</h2>
+    <p class="opacity">현대 대중매체의 콘텐츠로 창작되면서 일명 '좀비물'이라는 하나의 장르를 형성하였고, 이는 오늘날 대표적인 공포·재난·포스트 아포칼립스 갈래로 손꼽히고 있다. 콘텐츠에서는 인간을 공격해 물어뜯고 바이러스를 옮겨 자신들처럼 변하게 하는 흉측한 존재로 정형화되었다. 보통 영어에서는 zombie라고 쓰는데, <좀비 2>(1979)라는 이탈리아 영화가 미국에서 개봉되면서 zombie라는 표기가 굳어진 것으로 추정된다. 사실 현대 좀비 영화의 효시라고 할 수 있는 <살아 있는 시체들의 밤>(1969)에서도 다른 명칭이 쓰였고 감독인 조지 A. 로메로도 '구울이라고 부르면 불렀지 좀비는 생각도 못 했다. '고 밝힌 바 있다. 좀비의 주요한 특징에 부합하는 괴물이, 좀비가 아닌 다른 이름으로 불리는 경우도 제법 있다. 감염자(infected)가 대표적. 서양식 좀비 개념에 익숙하지 않았던 중국에서는 비슷한 강시(僵尸)로 번역하기도 한다.</p>
+		<h2 class="tlqkf"><span style="font-weight: bold; font-size: 25px;">좀비</span><br>:부두교 신앙의 전설에서 비롯된, <br>움직이는 시체 형태의 괴물을 일컫는 말.</h2>
 	</div>
 <script>
   const fadeImg = document.querySelector('.fade-image');
@@ -165,7 +179,7 @@ document.querySelectorAll(".fade-image").forEach(img => {
 </script>
 </section>
 <section class="wrap">
-		<div style="font-size: 20px;">나에게는 인간에게서 한없이 멀어진다는 것으로 들렸다.</div>
+		<div style="font-size: 20px;">내게는 인간에서 한없이 먼 존재로만 느껴졌다.<br>아무리 생각해도 인간으로부터 멀어질 일만 남은 것 같다.</div>
 	<ul class="button">
 	<p style="font-size: 15px; font-weight: light; padding:0;">click here↓</p>
 	<li><a href="index3.html">내게서 인간으로서의 무언가가 소거되어 간다.</a></li>
