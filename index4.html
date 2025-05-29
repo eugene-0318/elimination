@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>소거록</title>
+	<style>
+			@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+		.navbar{z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed; }
+		nav img{width: 70px;}
+		body{background: black; color: white; margin: auto; overflow-x: hidden;}
+	section{padding: 50px; margin: auto;}
+	div{padding-top: 100px;}
+	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px;}
+	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
+	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; }
+	.big-img{position: absolute; z-index: -1; width: 740px; opacity: 60%; top: 160px; left: 90px;}
+	.button{ padding: 10px 100px; color: white; border: none;}
+	.button:hover{background: black; transition: all 1s; }
+
+	.shaky-image {
+  animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1px, -1px); }
+  50%  { transform: translate(-1px, 1px); }
+  75%  { transform: translate(1px, 1px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+	.thinking{font-size: 60px; position: absolute;}
+
+	.fade-image {
+  opacity: 0;
+  transform: translateY(30px); /* 살짝 아래에서 올라오듯 */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+	.fade-image.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+	.image{margin: auto; text-align: center; z-index: 0;}
+
+	.blood{position: absolute; top: 1210px; left: 30px; z-index: 1;}
+	.mouth{position: absolute; top: 1740px; left: -230px; width: 500px; z-index: 5;}
+
+	.textbox{width: 900px; position: absolute; top: 1448px; left: 0px;z-index: -1}
+	.raw{width: 500px; padding-top: 100px;}
+
+  .button-bottom{
+  		display: flex;
+      text-decoration: none; 
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+    .button-bottom img{width: 70px; height: 70px;}
+  .button-bottom:hover{
+  	filter: drop-shadow(0px 0px 10px white);
+  	text-shadow: 0px 0px 10px white;
+  }
+
+	  .under-button{display: flex; width: 800px; justify-content: space-between; padding-top: 50px;}
+
+
+</style>
+</head>
+<body>
+<nav class="flex" style="box-shadow: 0px 0px 30px black";>
+		<button class="button" onclick="location.href='index3.html'">
+			<img src="phone.png">
+		</button>
+		<button class="button" onclick="location.href='index4.html'" style="background: black;">
+			<img src="chicken.png">
+		</button>
+		<button class="button" onclick="location.href='index5.html'">
+			<img src="brain.png">
+		</button>
+		<button class="button" onclick="location.href='index6.html'">
+			<img src="heart.png">
+		</button>
+	</nav>
+	<section class="wrap">
+		<div>
+		<h1>#2</h1>
+		<img src="house.png" class="big-img">
+		<p>이런 산골짜기에도 사람은 살았었나보다.<br>통상적으로 떠올리는 ‘시골집’의 이미지. 닭장과 작은 텃밭이 딸린 판자집이 오도카니 자리잡고 있었다.</p>
+		<p>인기척은 없다. 이번 사태 때문인지 그전의 다른 사정 때문인지는 모르겠다.</p>
+		<p>.</p>
+		<p>.</p>
+		<p>.</p>
+		</div>
+		<div class="fade-image" style="width: 100vw;">
+		<img src="chicken1.png" style="position: absolute; top: -360px; left: -1160px; width: 1730px;" class="shaky-image">
+		<img src="chicken2.png" style="position: absolute; top: -340px; left: 150px; width: 1840px;" class="shaky-image">
+		</div>
+
+		<script>
+  let lastScrollY = window.scrollY;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const currentScrollY = window.scrollY;
+
+      const hasBeenShown = entry.target.classList.contains('has-shown');
+
+      if (entry.isIntersecting) {
+        // 보일 때 show 클래스 부여
+        entry.target.classList.add("show");
+        entry.target.classList.add("has-shown"); // ✅ 한 번 나타났음을 표시
+      } else {
+        // 위로 스크롤할 때만 리셋 가능, 이미 보여졌던 경우만 제거
+        if (currentScrollY < lastScrollY && hasBeenShown) {
+          entry.target.classList.remove("show");
+          entry.target.classList.remove("has-shown"); // 다시 나타날 수 있도록 초기화
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  }, {
+    threshold: 0.7
+  });
+
+  // 여러 이미지에 적용
+  document.querySelectorAll(".fade-image").forEach(img => {
+    observer.observe(img);
+  });
+</script>
+
+		<p>다만 닭장 속에는 살아있는 닭 두 마리가 서성이고 있었다.</p>
+		<p>우리는 그 닭들을 보고 일제히 입맛을 다셨다.</p>
+	</div>
+	<div>
+		<h2>익혀 먹어야 할까?<br>아니, 그럴 필요 없을 것 같아.</h2>
+	</div>
+	<div>
+		<img src="blood.png" class="blood">
+		<img src="mouth.png" class="mouth">
+		<img src="mouth2.png" class="mouth" style="top: 1460px; left: -510px; width: 920px; z-index: -1; opacity: 40%;">
+		<img src="eating.png" class="mouth" style="top: 1760px; left: 420px; width: 800px; z-index: -1; opacity: 50%;">
+	</div>
+</section>
+<section class="wrap">
+	<div style="padding-top: 1210px;">
+		<p>우리는 방금 죽인, 어쩌면 아직도 숨이 붙어 있었을 지도 모를 생닭을 그대로 뜯어먹었다.<br>사방에 깃털과 닭피가 흥건했다.</p>
+		<p>무아지경으로 먹던 와중, 네가 문득 멈칫하더니 울 것 같은 목소리로 말했다.</p>
+	</div>
+		<div>
+			<img src="textbox.gif" class="textbox shaky-image">
+			<p style="font-size: 25px; font-weight: bold; z-index: 100;">“이러니까 이제 진짜로 사람이 아니게 된 것 같잖아…”</p>
+		</div>
+
+		<div style="padding-top100px;">
+			<img src="raw.png" class="raw">
+			<p>주변에는 우리가 먹다 남은 잔해가 지저분하게 늘어놓여 있었다.<br>우리는 이렇게 인간에서 또 한 발 멀어졌다.</p>
+		</div>
+	 <div class="under-button">
+ 	<button onclick="location.href='index3.html'" class="button-bottom">
+ 			<p style="transform: rotate(180deg);">➤</p>
+			<img src="phone.png">
+		</button>
+ 		<button onclick="location.href='index5.html'" class="button-bottom">
+			<img src="brain.png">
+			<p >➤</p>
+		</button>
+	</div>
+</section>
+ 	
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>소거록</title>
+	<style>
+			@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+		.navbar{z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed; }
+		nav img{width: 70px;}
+		body{background: black; color: white; margin: auto; overflow-x: hidden;}
+	section{padding: 50px; margin: auto;}
+	div{padding-top: 100px;}
+	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px; z-index: 1000;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px;}
+	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
+	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; }
+	.big-img{position: absolute; z-index: -1; width: 390px; opacity: 40%; top: 160px; left: 250px;}
+	.button{ padding: 10px 100px; color: white; border: none;}
+	.button:hover{background: black; transition: all 1s; }
+
+		.shaky-image {
+  animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1px, -1px); }
+  50%  { transform: translate(-1px, 1px); }
+  75%  { transform: translate(1px, 1px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+	.fade-image {
+  opacity: 0;
+  transform: translateY(30px); /* 살짝 아래에서 올라오듯 */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+	.fade-image.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+	  .button-bottom{
+  		display: flex;
+      text-decoration: none; 
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+    .button-bottom img{width: 70px; height: 70px;}
+  .button-bottom:hover{
+  	filter: drop-shadow(0px 0px 10px white);
+  	text-shadow: 0px 0px 10px white;
+  }
+
+	  .under-button{display: flex; width: 800px; justify-content: space-between; padding-top: 50px;}
+
+</style>
+</head>
+
+<body>
+<nav class="flex" style=" box-shadow: 0px 0px 30px black";>
+		<button class="button" onclick="location.href='index3.html'">
+			<img src="phone.png">
+		</button>
+		<button class="button" onclick="location.href='index4.html'">
+			<img src="chicken.png">
+		</button>
+		<button class="button" onclick="location.href='index5.html'"  style="background: black;">
+			<img src="brain.png">
+		</button>
+		<button class="button" onclick="location.href='index6.html'">
+			<img src="heart.png">
+		</button>
+	</nav>
+	<section class="wrap">
+		<div>
+			<img src="animalmouth.png" class="big-img">
+		<h1>#3</h1>	
+		<p>이성을 완전히 잃은 너를 처음 봤다.</p>
+		<p>영화에서, 아니 이제는 얼마 안 된 과거의 기차에서 본 그대로의 모습.<br>나에게 익숙한 얼굴일 뿐인 한 마리 좀비.</p>
+		<p>.</p>
+		<p>.</p>
+		<p>.</p>
+		</div>
+		<div style="padding-bottom: 650px;">
+		<img src="friendeye.png" class="fade-image" style="position: absolute; width: 410px; top: 740px; left: 450px; opacity: 50%; z-index: -1;">
+		<img src="friendmouth.png" class="fade-image" style="position: absolute; width: 1310px; top: 670px; left: -220px; opacity: 30%; z-index: -2;">
+		<img src="redeye.png" class="fade-image" style="position: absolute; width: 310px; top: 1150px; left: -140px;">
+		<img src="friendhand2.png" class="fade-image shaky-image" style="position: absolute; width: 740px; top: 1060px; left: 511px; z-index: 50;">
+		<img src="friendhand1.png" class="fade-image shaky-image" style="position: absolute; width: 740px; top: 680px; left: -370px;">
+		<p style="padding-top: 100px;">너는 사람을 찾았다. 이미 감염된 나는 시야에 없는 듯이 물어뜯을 사람만을 찾았다.</p>
+		<p>그때 너의 표정이 의식적으로 지은 것인지, 본능을 거스를 길이 없어 나온 표정인지 구분하는 데는 시간이 걸렸다.<br>처음 보는 표정이었던 것만은 분명하다.<br>그동안 이성으로 조절하고 있었던 표정, 몸짓, 자제력이 제 원하는 길을 찾아 활개치는 모습을 옆에서 지켜봤다.</p>
+		<p>그리고 그걸 지켜보는 나는 아직 이성을 잃지 않았음을 실감했다.</p>
+		</div>
+				<script>
+  let lastScrollY = window.scrollY;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const currentScrollY = window.scrollY;
+
+      const hasBeenShown = entry.target.classList.contains('has-shown');
+
+      if (entry.isIntersecting) {
+        // 보일 때 show 클래스 부여
+        entry.target.classList.add("show");
+        entry.target.classList.add("has-shown"); // ✅ 한 번 나타났음을 표시
+      } else {
+        // 위로 스크롤할 때만 리셋 가능, 이미 보여졌던 경우만 제거
+        if (currentScrollY < lastScrollY && hasBeenShown) {
+          entry.target.classList.remove("show");
+          entry.target.classList.remove("has-shown"); // 다시 나타날 수 있도록 초기화
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  }, {
+    threshold: 0.7
+  });
+
+  // 여러 이미지에 적용
+  document.querySelectorAll(".fade-image").forEach(img => {
+    observer.observe(img);
+  });
+</script>
+	</section>
+	<section style="background: url(https://64.media.tumblr.com/523a091cf0e6698c088ea1ba6bc0bcbd/tumblr_o97emcDXRl1tfgvxdo1_500.gif);">
+		<div class="wrap" style="background: url(https://i.gifer.com/VIPi.gif); background-size: cover; padding-bottom: 70px;">
+		<img src="myeyes.png" style="text-align: center; margin: auto; position: absolute; left: -170px; top: -510px; width: 1220px;">
+		<p style="font-size: 25px; text-shadow: 0px 0px 10px black;">…아니, 어쩌면 나도 기억하지 못할 뿐 이성을 잃은 적이 있을지도 모른다. </p>
+		<p style="text-shadow: 0px 0px 10px black;">나도 저렇게 이를 보이고, 날뛰고, 산 사람을 찾고, 그걸 기억하지 못하고…</p>
+		<p style="text-shadow: 0px 0px 10px black;">그러다 정신이 돌아오면 이렇게 너를 쳐다보며 아직은 남 일이라는 생각이나 하고.</p>
+	</div>
+	</section>
+	<section class="under-button wrap">
+ 	<button onclick="location.href='index4.html'" class="button-bottom">
+ 			<p style="transform: rotate(180deg);">➤</p>
+			<img src="brain.png">
+		</button>
+ 		<button onclick="location.href='index6.html'" class="button-bottom">
+			<img src="heart.png">
+			<p >➤</p>
+		</button>
+	</section>
+</body>
