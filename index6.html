@@ -10,14 +10,132 @@
 		body{background: black; color: white; margin: auto; overflow-x: hidden;}
 	section{padding: 50px; margin: auto;}
 	div{padding-top: 100px;}
-	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px}
-	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px;}
-	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px;}
+	h2{font-size: 60px; font-weight: semibold; position: absolute; top: 1170px; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px; user-select: none;}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px; user-select: none; z-index: 5;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px; user-select: none;}
 	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
 	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; }
-	.big-img{position: absolute; z-index: -1; width: 740px; opacity: 60%; top: 160px; left: 90px;}
-	button{ padding: 10px 100px; color: white; border: none;}
-	button:hover{background: black; transition: all 1s; }
+	.big-img{position: absolute; z-index: -1; width: 890px; opacity: 50%; top: 230px; left: 10px;}
+	.button{ padding: 10px 100px; color: white; border: none;}
+	.button:hover{background: black; transition: all 1s; }
+
+		  .button-bottom{
+  		display: flex;
+      text-decoration: none; 
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+    .button-bottom img{width: 70px; height: 70px;}
+  .button-bottom:hover{
+  	filter: drop-shadow(0px 0px 10px white);
+  	text-shadow: 0px 0px 10px white;
+  }
+	  .under-button{display: flex; width: 800px; justify-content: space-between; padding-top: 50px;}
+
+	  .fade-image {
+  opacity: 0;
+  transform: translateY(30px); /* 살짝 아래에서 올라오듯 */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+	.fade-image.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bulb-flicker {
+  animation: flicker 2s infinite;
+  filter: brightness(1);
+  transition: filter 0.2s ease;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1;   filter: brightness(1); }
+  5%   { opacity: 0.6; filter: brightness(0.5); }
+  10%  { opacity: 1;   filter: brightness(1.2); }
+  15%  { opacity: 0.4; filter: brightness(0.3); }
+  20%  { opacity: 0.9; filter: brightness(0.8); }
+  30%  { opacity: 0.5; filter: brightness(0.4); }
+  40%  { opacity: 1;   filter: brightness(1); }
+  60%  { opacity: 0.7; filter: brightness(0.6); }
+  70%  { opacity: 0.3; filter: brightness(0.3); }
+  85%  { opacity: 0.9; filter: brightness(1); }
+  100% { opacity: 1;   filter: brightness(1.2); }
+}
+
+.blur-border-section {
+  position: relative;
+  overflow: hidden; /* 블러가 삐져나가지 않도록 */
+}
+
+.blur-border-section::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  backdrop-filter: blur(6px); /* 🔥 핵심 블러 효과 */
+  pointer-events: none;
+}
+	.shaky-image {
+  animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1px, -1px); }
+  50%  { transform: translate(-1px, 1px); }
+  75%  { transform: translate(1px, 1px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+	  	    a{
+      font-size: 25px;
+      background-color: black;
+      color: white;
+      display: inline-block;
+      padding: 15px 25px;
+      cursor: pointer;
+      line-height: 1.6;
+      text-decoration: none;
+      marker: none;
+  }
+
+	         ul{
+      list-style-type: none; 
+      margin: auto;
+      marker: none;
+      padding: 50px;
+      font-size: 20px;
+    }
+
+
+    ul li a {
+      text-decoration: none; 
+      font-weight: 600;
+      color: black;
+      background: white;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    ul li a:hover{
+      background: black; 
+      color: white; 
+      transition: all 0.5s}
+
+
+  	.epil{
+      gap: 310px;
+      align-items: center;
+      margin: auto;
+  }
 </style>
 </head>
 
@@ -38,5 +156,110 @@
 	</nav>
 	<section class="wrap">
 		<div>
+			<img src="lastfriendeye.png" class="big-img">
 		<h1>#4</h1>	
+		<p>시간이 많이 흘렀을까, 조금 흘렀을까.<br>이성이 있는 상태의 너를 본 지도 꽤 된 것 같다.</p>
+		<p>.</p>
+		<p>.</p>
+		<p>.</p>
+		<p>이제는 이성이 있을 때보다 없을 때가 더 많은 너.<br>어차피 갈 곳이 없어진 나도, 네가 멋대로 가는 길 따라 쫓아다닌다.</p>
+		<p>저벅저벅. 갈 곳 없는 좀비 둘이 허위허위 쏘다닌다.</p>
+		</div>
+		<div class="fade-image">
+		<img src="footprintedit.png" style="width: 1630px; position: absolute; top: -551px; left: -350px; opacity: 50%; z-index: 0;" >
+		<img src="footprintedit.png" style="width: 2171px; position: absolute; top: -940px; left: -760px; opacity: 20%; z-index: -1;">
+		<img src="footprint.png" style="width: 300px; position: absolute; top: -20px; left: -50px; opacity: 100%;">
+		<img src="footprint.png" style="width: 300px; position: absolute; top: 80px; left: 260px; opacity: 100%;">
+		<img src="footprint.png" style="width: 300px; position: absolute; top: -40px; left: 470px; opacity: 100%;">
+		<img src="footprint.png" style="width: 300px; position: absolute; top: 60px; left: 720px; opacity: 100%;">
+	</div>
+	<script>
+  let lastScrollY = window.scrollY;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const currentScrollY = window.scrollY;
+
+      const hasBeenShown = entry.target.classList.contains('has-shown');
+
+      if (entry.isIntersecting) {
+        // 보일 때 show 클래스 부여
+        entry.target.classList.add("show");
+        entry.target.classList.add("has-shown"); // ✅ 한 번 나타났음을 표시
+      } else {
+        // 위로 스크롤할 때만 리셋 가능, 이미 보여졌던 경우만 제거
+        if (currentScrollY < lastScrollY && hasBeenShown) {
+          entry.target.classList.remove("show");
+          entry.target.classList.remove("has-shown"); // 다시 나타날 수 있도록 초기화
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  // 여러 이미지에 적용
+  document.querySelectorAll(".fade-image").forEach(img => {
+    observer.observe(img);
+  });
+</script>
+
+	</section>
+	<section class="wrap">
+		<img src="scared1.png" style="width: 500px; position: absolute; top: 290px; left: -160px;">
+		<img src="scared2.png" style="width: 430px; position: absolute; top: 270px; left: 260px; transform: scaleX(-1);">
+		<img src="scared3.png" style="width: 500px; position: absolute; top: 330px; left: 460px;">
+		<img src="scared4.png" style="width: 500px; position: absolute; top: 300px; left: 70px;">
+		<img src="blooddrop.png" style="width: 800px; position: absolute; top: 510px; left: 350px; opacity: 40%; z-index: -1;">
+		<img src="splash.png" style="width: 1090px; position: absolute; top: 310px; left: -320px; opacity: 30%; z-index: -1;">
+	</section>
+	<section class="wrap" style="padding-top: 500px;">
+		<div>
+		<p>우리는 이 상태로 산 사람을 마주치기도 했다.<br>내가 그와 뭐라 대화를 나누기도 전에 너는 그를 공격하기에 바빴다.<br>덕분에 아무 의사소통도 하지 못한 채 잔인하게 뜯어먹힌 이가 이제는 꽤 여럿에 달할 것이다.</p>
+		<p>그러한 살육이 몇 차례씩이나 반복되었다.</p>
+		</div>
+		</section>
+		<section class="wrap">
+		<div>
+		<p>그런데 이런 광경보다도 더 이상한 것은,</p>
+		<p>그 모든 과정을 지켜보면서도 완전한 좀비가 된 너에 대한 연민이나 네가 뜯어먹은 이에 대한<br>연민, 유감, 슬픔 따위를 전혀 느끼지 못하는 바로 나.</p>
+	</div>
+</section>
+			<section class="wrap" >
+			<img src="weird1.png" style="width: 890px; position: absolute; top: 170px; left: 0px; z-index: 2;">
+			<img src="weird2.png" style="width: 680px; position: absolute; top: -40px; left: 50px; z-index: 1;">
+			<img src="weird3.png" style="width: 1090px; position: absolute; top: -240px; left: -70px; z-index: 0; opacity: 50%;">
+		</section>
+			<section class="wrap" style="padding-top: 500px;">
+		<p style="font-size: 20px">무엇을 봐도 입술 새로 나오는 탄성인지 괴성인지 모를 것을 흘리는 것밖에는 할 수 없게 된 나다.</p>
+		</div>
+	</section>
+	<section style="align-content: center; background: url(https://archive.org/download/GIFCreator/Insainment-static-glitch121.gif); background-size: cover; -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);" class="bulb-flicker">
+		<div class="wrap" style="width: 1000px">
+		<img src="film.png" style="width: 1000px; margin: auto; text-align: center;filter: drop-shadow(0px 0px 10px black)">
+	</div>
+	</section>
+	<section class="wrap">
+		<div style="padding-top: 0;">
+		<img src="hands.png" style="width: 940px; position: absolute; top: -850px; left: 620px;" class="shaky-image">
+		<img src="hands2.png" style="width: 940px; position: absolute; top: -1000px; left: -660px;" class="shaky-image">
+		<p>내 얼굴과 팔다리는 눈앞 상황과 관계없이 멋대로 움직이고 있고,<br>모든 일은 그저 내 눈 앞에서 의미 없는 동영상처럼 흘러갈 뿐이다.<br>아무런 사고나 감상도 떠올리지 않은 채 그 영상들을 응시한다.<br>더 이상 내가 통제하는 몸이 아닌, ‘그것’이 저지르는 대로 일어나는 일들을 그저 보기만 할 뿐이다.</p>
+	</div>
+			<ul class="epil">
+	<p style="font-size: 15px; font-weight: light; padding:0;">click here↓</p>
+	<li><a href="index7.html">...내 정신은 어디로 간 거지?</a></li>
+	</ul>
+			<section class="under-button wrap">
+ 	<button onclick="location.href='index4.html'" class="button-bottom">
+ 			<p style="transform: rotate(180deg);">➤</p>
+			<img src="brain.png">
+		</button>
+ 		<button onclick="location.href='index6.html'" class="button-bottom" style="visibility: hidden;">
+			<img src="heart.png">
+			<p >➤</p>
+		</button>
+	</section>
 </body>

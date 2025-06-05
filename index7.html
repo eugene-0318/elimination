@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>소거록</title>
+	<style>
+			@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+		.navbar{z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed; }
+		nav img{width: 70px;}
+		body{background: black; color: white; margin: auto; overflow-x: hidden;}
+	section{padding: 50px; margin: auto;}
+	div{padding-top: 100px;}
+	h2{font-size: 50px; font-weight: semibold; position: absolute; opacity: 70%; background: url(https://upload.wikimedia.org/wikipedia/commons/8/89/White-noise.gif); padding: 10px 20px; user-select: none;}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px 0px; user-select: none;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; width: 800px; padding-top: 100px; padding-bottom: 50px; user-select: none;}
+	.flex{display: flex; justify-content: center; z-index: 1000; width: 100%; background: url(https://img1.picmix.com/output/stamp/normal/0/3/4/9/2449430_7387e.gif); position: fixed;}
+	.wrap{width: 800px; padding: 50px; margin: auto; text-align: center; align-items: center; position: relative; background: black;}
+	.big-img{position: absolute; z-index: -1; width: 740px; opacity: 60%; top: 160px; left: 90px;}
+	.button{ padding: 10px 100px; color: white; border: none;}
+	.button:hover{background: black; transition: all 0.5s; }
+
+	.bg-top{background: url(https://cdn.pixabay.com/animation/2023/06/24/17/13/17-13-47-477_512.gif); background-size: cover; background-attachment: fixed; padding: 272px}
+
+	  	    a{
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      display: inline-block;
+      padding: 10px 20px;
+      cursor: pointer;
+      line-height: 1.6;
+      text-decoration: none;
+      marker: none;
+  }
+
+	         ul{
+      list-style-type: none; 
+      margin: auto;
+      marker: none;
+      padding: 30px;
+      font-size: 16px;
+    }
+
+
+    ul li a {
+      text-decoration: none; 
+      font-weight: 600;
+      color: black;
+      background: white;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    ul li a:hover{
+      background: black; 
+      color: white; 
+      transition: all 0.5s}
+
+
+  	.re{
+      gap: 310px;
+      align-items: center;
+      margin: auto;
+  }
+
+	.comment-section {
+  max-width: 600px;
+  max-height: 500px;
+  margin: 20px auto;
+  overflow: hidden;
+  align-items: center;
+}
+textarea {
+  width: 90%;
+  height: 20px;
+  font-size: 16px;
+  font-family: 'pretendard';
+  resize: none;
+  background: black;
+  box-shadow: 0px 0px 10px white;
+  caret-color: white;
+  padding: 10px;
+  color: white;
+    resize: none;             /* 크기 조절 핸들 제거 */
+  overflow: hidden;
+    white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word
+
+}
+textarea::placeholder {
+  font-family: 'pretendard';  /* 원하는 폰트 */
+  font-size: 16px;
+  color: gray;
+}
+
+#submit-comment {
+	margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
+  transition: all 1s;
+  cursor: pointer;
+  border: none;
+}
+  #submit-comment:hover{background: black; color: white;}
+
+#comment-list li {
+  background: white;
+  color: black;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 2px;
+  font-family: 'pretendard';
+  text-decoration: none;
+  max-height: 200px;
+  text-align: left;
+   overflow-y: auto;
+}
+
+</style>
+</head>
+<body>
+	<section class="bg-top">
+		
+	</section>
+	<section class="wrap" style="padding-top: 0;">
+		<div>
+		<p>비척거리는 생물 하나.</p>
+		<p>그는 우리와 같은 조직의 뼈와 피부, 장기를 가지고 있고 몸을 움직일 수 있으나,</p>
+		</div>
+    <div>
+      <img src="human.png" style="width: 800px;-webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)";>
+    </div>
+		<div style="padding-top: 0;">
+		<h2 style="top: 390px; left: 0px;">의무감도,</h2>
+		<h2 style="top: 530px; left: 650px;">체면도,</h2>
+		<h2 style="top: 729px; left: 0px;">이성도,</h2>
+		<h2 style="top: 890px; left: 650px;">감정도</h2>
+		</div>
+		<div>
+		<p>무엇도 가지고 있지 않다.</p>
+		<p>이것을 우리는 여전히 사람이라고 할 수 있을까?</p>
+		</div>
+	</section>
+	<section style="background: url(https://images.squarespace-cdn.com/content/v1/567c40b15a5668eee1ff0636/1597701601101-IB0VBI77F1MBW90Y93BS/White-Noise-32.gif); background-size: cover;">
+    <div class="wrap">
+      <img src="areyouhuman.png">
+		<h3>…반대로 우리는 사람일까?<br>우리는, 당신은 저것과 어떻게 다른가?</h3>
+		<p>당신에게는 있지만 저것이 갖지 못한 ‘인간성’은 과연 무엇이기에 당신은 ’저것’과 ‘나’를 다르다고 생각하는가.</p>
+  </div>
+</section>
+<section class="wrap" style="padding-top: 0;">
+	<div class="comment-section">
+  <textarea id="comment-input" placeholder="당신이 생각하는 인간성이란 무엇인지 적어 주세요."></textarea>
+  <button id="submit-comment">저장</button>
+  <ul id="comment-list" style="padding-top: 50px; padding-left: 0; padding-right: 0;"></ul>
+</div>
+<script>
+  const commentInput = document.getElementById('comment-input');
+  const commentList = document.getElementById('comment-list');
+  const submitBtn = document.getElementById('submit-comment');
+
+  // 저장된 댓글 불러오기
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+  function renderComments() {
+    commentList.innerHTML = '';
+    comments.forEach(comment => {
+      const li = document.createElement('li');
+      li.textContent = comment;
+      commentList.prepend(li);
+    });
+  }
+
+  // 첫 로딩 시 표시
+  renderComments();
+
+  submitBtn.addEventListener('click', () => {
+    const text = commentInput.value.trim();
+    if (text) {
+      comments.push(text);
+      localStorage.setItem('comments', JSON.stringify(comments));
+      renderComments();
+      commentInput.value = '';
+    }
+      const textarea = document.getElementById('comment-input');
+
+  textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto'; // 먼저 높이 초기화
+    textarea.style.height = textarea.scrollHeight + 'px'; // 실제 높이만큼 조절
+  });
+  });
+</script>
+<div>
+	<ul class="re">
+	<li><a href="index.html">처음으로 돌아가기</a></li>
+	</ul>
+</div>
+</section>
+</body>
