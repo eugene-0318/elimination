@@ -10,11 +10,13 @@
 
 	.wrap{padding: 50px; margin: auto; text-align: center; align-items: center; position: relative;}
 
-	h2{font-size: 20px; font-weight: semibold}
+	h2{font-size: 20px; font-weight: semibold; user-select: none;}
 
-	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px;}
+	p{font-size: 15px; font-weight: regular; line-height: 160%; padding: 20px; user-select: none;}
 
-	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto;}
+	h1{font-style: italic; font-size: 30px; font-weight: medium; margin: auto; user-select: none;}
+
+  .bg-cover{background: url(cover.png); background-size: cover; background-attachment: fixed; padding: 420px}
 
 .image-container {
   position: relative;
@@ -101,6 +103,7 @@
 </head>
 
 <body>
+  <section class="bg-cover" style="padding-left: 0;"></section>
 	<section class="wrap" style="background: black;">
 		<h2>주의사항</h2>
 		<p>사고 현장, 물린 상처 등 다소 폭력적인 이미지가 포함되어 있습니다.<br>열람 시 참고해 주시기 바랍니다.</p>
